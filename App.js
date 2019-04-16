@@ -8,11 +8,12 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Picker} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
-    'Double tap R on your keasdasd yboard to reload,\n' +
+    'Double tap R on your keyboar    d to reload,\n' +
     'Shake or press menu button for dev menu',
 });
 
@@ -38,17 +39,17 @@ export default class App extends React.Component {
           onValueChange={(itemValue, itemIndex) =>
             this.setState({language: itemValue})
           }>
-          <Picker.Item label="UNC Chapel Hill" value="java" />
-          <Picker.Item label="NC State" value="js" />
-          <Picker.Item label="Duke" value="js" />
-          <Picker.Item label="Wake Forest" value="js" />
-          <Picker.Item label="UNC Wilmington" value="js" />
-          <Picker.Item label="ECU" value="js" />
-          <Picker.Item label="UNC Charlotte" value="js" />
-          <Picker.Item label="UNC Greensboro" value="js" />
-          <Picker.Item label="Appalachian State" value="js" /> 
+          <Picker.Item label="UNC Chapel Hill" value="uncch" />
+          <Picker.Item label="NC State" value="ncs" />
+          <Picker.Item label="Duke" value="duke" />
+          <Picker.Item label="Wake Forest" value="wf" />
+          <Picker.Item label="UNC Wilmington" value="uncw" />
+          <Picker.Item label="ECU" value="ecu" />
+          <Picker.Item label="UNC Charlotte" value="uncc" />
+          <Picker.Item label="UNC Greensboro" value="uncg" />
+          <Picker.Item label="Appalachian State" value="apps" /> 
         </Picker>
-        <Text style={styles.instructions}>If your college isn't listed....</Text>
+        <Text style={styles.instructions}>If your college isn't listed...</Text>
       </View>
     );
   }
