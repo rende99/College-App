@@ -46,7 +46,7 @@ export default class App extends React.Component {
           <Picker.Item label="ECU" value="js" />
           <Picker.Item label="UNC Charlotte" value="js" />
           <Picker.Item label="UNC Greensboro" value="js" />
-
+          <Picker.Item label="Clemson" value="js" /> 
         </Picker>
       </View>
     );
