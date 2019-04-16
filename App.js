@@ -21,7 +21,7 @@ export default class App extends React.Component {
     super(props);
   
     this.state = {
-      pickerSelection: 'Default'
+      pickerSelection: 'Choose a school:'
     }
   }
 
@@ -48,7 +48,7 @@ export default class App extends React.Component {
           <Picker.Item label="UNC Greensboro" value="js" />
           <Picker.Item label="Appalachian State" value="js" /> 
         </Picker>
-        <Text style={styles.instructions}>If your college isn'trrrr listed....</Text>
+        <Text style={styles.instructions}>If your college isn't listed....</Text>
       </View>
     );
   }
