@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Picker} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -29,7 +30,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.welcome}>Homescreen</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Picker
@@ -48,6 +49,7 @@ export default class App extends React.Component {
           <Picker.Item label="UNC Greensboro" value="js" />
           <Picker.Item label="Appalachian State" value="js" /> 
         </Picker>
+        <Text style={styles.instructions}>If your college isn't listed....</Text>
       </View>
     );
   }
