@@ -8,12 +8,11 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Picker} from 'react-native';
-import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
-    'Double tap R on your keyboard to reload,\n' +
+    'Double tap R on your keasdasd yboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
 
@@ -49,7 +48,7 @@ export default class App extends React.Component {
           <Picker.Item label="UNC Greensboro" value="js" />
           <Picker.Item label="Appalachian State" value="js" /> 
         </Picker>
-        <Text style={styles.instructions}>If your college isn't listed....</Text>
+        <Text style={styles.instructions}>If your college isn'trrrr listed....</Text>
       </View>
     );
   }
