@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Picker} from 'react-native';
+import {Platform, StyleSheet, Text, View, Picker, Button, Alert} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import {Navigation} from 'react-native-navigation';
 
@@ -51,6 +51,14 @@ export default class App extends React.Component {
           <Picker.Item label="UNC Greensboro" value="uncg" />
           <Picker.Item label="Appalachian State" value="apps" /> 
         </Picker>
+        <Button
+          onPress={() => {
+            Alert.alert('This should register, go into intro page');
+          }}
+          title={"Continue"}
+          color='#4B9CD3'
+
+        />
         <Text style={styles.instructions}>If your college isn't listed...</Text>
       </View>
     );
