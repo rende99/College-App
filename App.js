@@ -12,6 +12,8 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 import {Navigation} from 'react-native-navigation';
 
 
+
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -19,7 +21,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends React.Component {
+class HomeScreen extends React.Component {
   constructor(props){
     super(props);
   
@@ -30,10 +32,10 @@ export default class App extends React.Component {
 
 
   render() {
+    const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Homescreen</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Picker
           selectedValue={this.state.language}
@@ -53,9 +55,42 @@ export default class App extends React.Component {
         </Picker>
         <Button
           onPress={() => {
-            Alert.alert('This should register, go into intro page');
+            navigate('Test');
           }}
           title={"Continue"}
+          color='#4B9CD3'
+
+        />
+        <Text style={styles.instructions}>If your college isn't listed...</Text>
+      </View>
+    );
+  }
+}
+
+
+
+class TestScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+  constructor(props){
+    super(props);
+  
+    this.state = {
+      pickerSelection: 'Choose a school:'
+    }
+  }
+  render() {
+    const {navigate} = this.props.navigation
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Test Screen</Text>
+        <Text style={styles.instructions}>{instructions}</Text>
+        <Button
+          onPress={() => {
+            Alert.alert('Aye');
+          }}
+          title={"In Test"}
           color='#4B9CD3'
 
         />
@@ -90,3 +125,14 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
 });
+
+
+const MainNavigator = createStackNavigator({
+  Home: {screen: HomeScreen},
+  Test: {screen: TestScreen},
+});
+
+
+const App = createAppContainer(MainNavigator);
+export default App;
+
