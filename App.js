@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Picker} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {Navigation} from 'react-native-navigation';
 
 
 const instructions = Platform.select({
