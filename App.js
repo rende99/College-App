@@ -9,11 +9,11 @@
 import React, {Component} from 'react';
 import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
 import FirstLogin from './College-App/components/FirstLogin'
-import mainTabs from './College-App/components/mainTabs'
+import MainTabs from './College-App/components/MainTabs'
 
 const MainNavigator = createStackNavigator({
   firstLogin: {screen: FirstLogin},
-  mainTabs: {screen: mainTabs}
+  mainTabs: {screen: MainTabs}
 });
 
 
