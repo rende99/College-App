@@ -7,11 +7,11 @@
  */
 
 import React, { Component } from 'react';
-import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import FirstLogin from './app/components/FirstLogin'
 import MainTabs from './app/components/MainTabs'
 
-const MainNavigator = createStackNavigator({
+const MainNavigator = createSwitchNavigator({
   firstLogin: { screen: FirstLogin },
   mainTabs: { screen: MainTabs }
 },
