@@ -8,8 +8,8 @@
 
 import React, {Component} from 'react';
 import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
-import FirstLogin from './College-App/components/FirstLogin'
-import MainTabs from './College-App/components/MainTabs'
+import FirstLogin from './app/components/FirstLogin'
+import MainTabs from './app/components/MainTabs'
 
 const MainNavigator = createStackNavigator({
   firstLogin: {screen: FirstLogin},
