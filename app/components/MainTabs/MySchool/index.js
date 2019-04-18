@@ -25,7 +25,7 @@ class MySchool extends React.Component {
         const { navigate } = this.props.navigation
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>My School</Text>
+                <Text style={styles.welcome}>My School Tab</Text>
                 <Text style={styles.instructions}>{instructions}</Text>
                 <Button
                     onPress={() => {
@@ -40,6 +40,17 @@ class MySchool extends React.Component {
         );
     }
 }
+
+const TestSvgUri = () => (
+    <View style={styles.container}>
+      <SvgUri
+        width="200"
+        height="200"
+        source={{uri:'http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg'}}
+      />
+    </View>
+  );
+
 
 const styles = StyleSheet.create({
     container: {

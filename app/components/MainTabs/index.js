@@ -5,6 +5,7 @@ import MySchool from './MySchool';
 import Contribute from './Contribute';
 import National from './National';
 import Ionicons from 'react-native-ionicons';
+import SvgUri from 'react-native-svg-uri';
 
 class MainTabs extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class MainTabs extends React.Component {
         );
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
