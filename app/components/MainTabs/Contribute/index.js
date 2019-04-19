@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Picker, Button, Alert } from 'react-native';
 import { createStackNavigator, createAppContainer, NavigationActions, createBottomTabNavigator  } from 'react-navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 class Contribute extends React.Component {
     render() {
@@ -22,7 +22,7 @@ class Contribute extends React.Component {
     }
     static navigationOptions = {
         tabBarLabel: 'Contribute',
-        tabBarIcon: ({ tintColor }) => (<FontAwesomeIcon icon={ faCoffee } color={tintColor} />)
+        tabBarIcon: ({ tintColor }) => (<FontAwesomeIcon icon={ faPlus } color={tintColor} styles={[styles.icon]} size={24} />)
 
     };
 }
@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
         color: '#000000',
     },
     icon: {
-        width: 26,
-        height: 26
+        width: 40,
+        height: 40
     }
 });
 

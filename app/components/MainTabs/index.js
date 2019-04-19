@@ -75,6 +75,7 @@ const TabNavigator = createBottomTabNavigator(
             activeTintColor: 'orange',
             inactiveTintColor: '#586589',
             showIcon: true,
+            showLabel: false,
             style: {
                 backgroundColor: '#171F33',
             }

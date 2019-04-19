@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Picker, Button, Alert, Image } from 'react-native';
 import { createStackNavigator, createAppContainer, NavigationActions, createBottomTabNavigator } from 'react-navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faUniversity } from '@fortawesome/free-solid-svg-icons'
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -41,7 +41,7 @@ class MySchool extends React.Component {
     }
     static navigationOptions = {
         tabBarLabel: 'My School',
-        tabBarIcon: ({ tintColor }) => (<FontAwesomeIcon icon={ faCoffee } color={tintColor} />)
+        tabBarIcon: ({ tintColor }) => (<FontAwesomeIcon icon={ faUniversity } color={tintColor} size={24} />)
     };
 }
 
