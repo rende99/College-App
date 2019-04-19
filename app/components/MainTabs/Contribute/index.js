@@ -19,6 +19,9 @@ class Contribute extends React.Component {
             </View>
         );
     }
+    static navigationOptions = {
+        tabBarLabel: 'Contribute',
+    };
 }
 
 const styles = StyleSheet.create({
@@ -43,6 +46,10 @@ const styles = StyleSheet.create({
         width: 300,
         color: '#000000',
     },
+    icon: {
+        width: 26,
+        height: 26
+    }
 });
 
 

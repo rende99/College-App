@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Picker, Button, Alert } from 'react-native';
-import { createStackNavigator, createAppContainer, NavigationActions, createBottomTabNavigator  } from 'react-navigation';
-
+import { Platform, StyleSheet, Text, View, Picker, Button, Alert, Image } from 'react-native';
+import { createStackNavigator, createAppContainer, NavigationActions, createBottomTabNavigator } from 'react-navigation';
 
 
 const instructions = Platform.select({
@@ -39,17 +38,10 @@ class MySchool extends React.Component {
             </View>
         );
     }
+    static navigationOptions = {
+        tabBarLabel: 'My School',
+    };
 }
-
-const TestSvgUri = () => (
-    <View style={styles.container}>
-      <SvgUri
-        width="200"
-        height="200"
-        source={{uri:'http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg'}}
-      />
-    </View>
-  );
 
 
 const styles = StyleSheet.create({
@@ -74,6 +66,10 @@ const styles = StyleSheet.create({
         width: 300,
         color: '#000000',
     },
+    icon: {
+        width: 26,
+        height: 26
+    }
 });
 
 

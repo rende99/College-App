@@ -17,9 +17,15 @@ class National extends React.Component {
                     color='#4B9CD3'
 
                 />
+                
+
             </View>
         );
     }
+    static navigationOptions = {
+        tabBarLabel: 'National',
+
+    };
 }
 
 const styles = StyleSheet.create({
@@ -44,6 +50,10 @@ const styles = StyleSheet.create({
         width: 300,
         color: '#000000',
     },
+    icon: {
+        width: 26,
+        height: 26
+    }
 });
 
 

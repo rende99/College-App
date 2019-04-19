@@ -4,8 +4,9 @@ import { createStackNavigator, createAppContainer, NavigationActions, createBott
 import MySchool from './MySchool';
 import Contribute from './Contribute';
 import National from './National';
-import Ionicons from 'react-native-ionicons';
-import SvgUri from 'react-native-svg-uri';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 class MainTabs extends React.Component {
     constructor(props) {
@@ -52,6 +53,10 @@ const styles = StyleSheet.create({
         width: 300,
         color: '#000000',
     },
+    icon: {
+        width: 26,
+        height: 26
+    }
 });
 
 
@@ -64,27 +69,16 @@ const TabNavigator = createBottomTabNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, horizontal, tintColor }) => {
-                const { routeName } = navigation.state;
-                let IconComponent = Ionicons;
-                let iconName;
-                if (routeName === 'MySchool') {
-                  iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-                  // Sometimes we want to add badges to some icons. 
-                  // You can check the implementation below.
-                  IconComponent = HomeIconWithBadge; 
-                } else if (routeName === 'National') {
-                  iconName = `ios-options`;
-                }
-        
-                // You can return any component that you like here!
-                return <IconComponent name={iconName} size={25} color={'#FFFFFF'} />;
-              },
+
+            },
         }),
         tabBarOptions: {
             activeTintColor: 'orange',
             inactiveTintColor: '#586589',
+            showIcon: true,
             style: {
                 backgroundColor: '#171F33',
+                icon: <FontAwesomeIcon icon={faCoffee}/>
             }
         },
 

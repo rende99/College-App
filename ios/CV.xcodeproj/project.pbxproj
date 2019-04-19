@@ -62,6 +62,7 @@
 		CFEA96A3A31C4F70837ED831 /* ReactNativeNavigationTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 611090B3645844DBB6CB1081 /* ReactNativeNavigationTests.xctest */; };
 		D53D3FBC3C104BD686D15F3F /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F957BC8725D342B382630DD2 /* libRNVectorIcons.a */; };
 		614A9BB1782A4487B245ADB0 /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4466C8B38A41DD9EA3A03F /* libRNVectorIcons-tvOS.a */; };
+		F56A9036BB384EB9969F7A0D /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A86D833886B9483EA84A4460 /* Ionicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +397,7 @@
 		0E1FE51165E84AE5AEE671EF /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; name = "RNVectorIcons.xcodeproj"; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		F957BC8725D342B382630DD2 /* libRNVectorIcons.a */ = {isa = PBXFileReference; name = "libRNVectorIcons.a"; path = "libRNVectorIcons.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		CA4466C8B38A41DD9EA3A03F /* libRNVectorIcons-tvOS.a */ = {isa = PBXFileReference; name = "libRNVectorIcons-tvOS.a"; path = "libRNVectorIcons-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A86D833886B9483EA84A4460 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -691,6 +693,7 @@
 				72A5E788EBBB4CF1854FF08B /* Octicons.ttf */,
 				3E1ACCF261514335A6A47AE2 /* SimpleLineIcons.ttf */,
 				C00FC10277624910B7648B11 /* Zocial.ttf */,
+				A86D833886B9483EA84A4460 /* Ionicons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				305A0DF7873C4CABA96BA66A /* Octicons.ttf in Resources */,
 				6ABF6D490E8D4D90999E9881 /* SimpleLineIcons.ttf in Resources */,
 				A19313B9290540A9947FF4B3 /* Zocial.ttf in Resources */,
+				F56A9036BB384EB9969F7A0D /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
