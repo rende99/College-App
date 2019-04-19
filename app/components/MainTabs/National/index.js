@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Picker, Button, Alert } from 'react-native';
 import { createStackNavigator, createAppContainer, NavigationActions, createBottomTabNavigator  } from 'react-navigation';
-
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 class National extends React.Component {
 
@@ -23,8 +24,8 @@ class National extends React.Component {
         );
     }
     static navigationOptions = {
-        tabBarLabel: 'National',
-
+        tabBarLabel:'National',
+        tabBarIcon: ({ tintColor }) => (<FontAwesomeIcon icon={ faCoffee } color={tintColor} />)
     };
 }
 

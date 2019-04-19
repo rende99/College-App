@@ -4,8 +4,7 @@ import { createStackNavigator, createAppContainer, NavigationActions, createBott
 import MySchool from './MySchool';
 import Contribute from './Contribute';
 import National from './National';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 
 class MainTabs extends React.Component {
@@ -78,7 +77,6 @@ const TabNavigator = createBottomTabNavigator(
             showIcon: true,
             style: {
                 backgroundColor: '#171F33',
-                icon: <FontAwesomeIcon icon={faCoffee}/>
             }
         },
 
