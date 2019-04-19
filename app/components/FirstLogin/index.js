@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Picker, Button, Alert } from 'react-native';
-import { createStackNavigator, createAppContainer, NavigationActions  } from 'react-navigation';
-
+import { createStackNavigator, createAppContainer, NavigationActions } from 'react-navigation';
+import { SearchBar } from 'react-native-elements'
 
 
 const instructions = Platform.select({
@@ -12,35 +12,32 @@ const instructions = Platform.select({
 });
 
 class FirstLogin extends React.Component {
-    constructor(props) {
-        super(props);
+    state = {
+        search: '',
+    };
 
-        this.state = {
-            pickerSelection: 'Choose a school:'
-        }
-    }
+    updateSearch = search => {
+        this.setState({ search });
+    };
+
     render() {
         const { navigate } = this.props.navigation
+        const { search } = this.state;
+
         return (
+
             <View style={styles.container}>
+
                 <Text style={styles.welcome}>Homescreen</Text>
                 <Text style={styles.instructions}>{instructions}</Text>
-                <Picker
-                    selectedValue={this.state.language}
-                    style={styles.picker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({ language: itemValue })
-                    }>
-                    <Picker.Item label="UNC Chapel Hill" value="uncch" />
-                    <Picker.Item label="NC State" value="ncs" />
-                    <Picker.Item label="Duke" value="duke" />
-                    <Picker.Item label="Wake Forest" value="wf" />
-                    <Picker.Item label="UNC Wilmington" value="uncw" />
-                    <Picker.Item label="ECU" value="ecu" />
-                    <Picker.Item label="UNC Charlotte" value="uncc" />
-                    <Picker.Item label="UNC Greensboro" value="uncg" />
-                    <Picker.Item label="Appalachian State" value="apps" />
-                </Picker>
+
+                <SearchBar
+                    containerStyle={{ borderRadius: 5, borderWidth: 0, width: 300, margin: 20, padding: 0 }}
+                    searchStyle={{ color: 'black' }}
+                    placeholder={"Search for your College/Uni..."}
+                    onChangeText={this.updateSearch}
+                    value={search}
+                />
                 <Button
                     onPress={() => {
                         navigate('mainTabs');
@@ -82,6 +79,16 @@ const styles = StyleSheet.create({
         width: 300,
         color: '#000000',
     },
+    searchText: {
+        fontSize: 50,
+    },
+    backgroundVideo: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+    }
 });
 navigationOptions: {
     headerLeft: null
