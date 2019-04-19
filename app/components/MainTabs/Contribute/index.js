@@ -7,16 +7,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 class Contribute extends React.Component {
     render() {
         return (
-            <View>
-                <Text>CONTRIBUTE</Text>
-                <Button
-                    onPress={() => {
-                        navigate('national');
-                    }}
-                    title={"Continue"}
-                    color='#4B9CD3'
-
-                />
+            <View style={styles.container}>
+                <Text style={styles.welcome}>Contribute Tab</Text>
             </View>
         );
     }

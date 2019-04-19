@@ -8,18 +8,8 @@ class National extends React.Component {
 
     render() {
         return (
-            <View>
-                <Text>NATIONAL</Text>
-                <Button
-                    onPress={() => {
-                        
-                    }}
-                    title={"Continue"}
-                    color='#4B9CD3'
-
-                />
-                
-
+            <View style={styles.container}>
+                <Text style={styles.welcome}>National Tab</Text>
             </View>
         );
     }

@@ -14,28 +14,10 @@ const instructions = Platform.select({
 
 class MySchool extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            pickerSelection: 'Choose a school:'
-        }
-    }
     render() {
-        const { navigate } = this.props.navigation
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>My School Tab</Text>
-                <Text style={styles.instructions}>{instructions}</Text>
-                <Button
-                    onPress={() => {
-                        navigate('contribute');
-                    }}
-                    title={"Continue"}
-                    color='#4B9CD3'
-
-                />
-                <Text style={styles.instructions}>If your college isn't listed...</Text>
             </View>
         );
     }
