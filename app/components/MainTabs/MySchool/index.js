@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Picker, Button, Alert, Image } from 'react-native';
+import { Platform, StyleSheet, Text, View, Picker, Button, Alert, Image, FlatList } from 'react-native';
 import { createStackNavigator, createAppContainer, NavigationActions, createBottomTabNavigator } from 'react-navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faUniversity } from '@fortawesome/free-solid-svg-icons'
+import {List, ListItem} from 'react-native-elements'
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -12,12 +13,49 @@ const instructions = Platform.select({
 });
 
 
-class MySchool extends React.Component {
+export default class MySchool extends React.Component {
+    state = {
+        data: [],
+        page: 0,
+        loading: false
+
+    }
+    componentWillMount(){
+        this.fetchData();
+    }
+
+    fetchData = async () => {
+        this.setState({loading: true}); // preparing for request
+        const response = await fetch(`https://randomuser.me/api?results=10&seed=hih&page=0${this.state.page}`);
+        const json = await response.json();
+        this.setState(state => ({
+            data: [...state.data, ...json.results],
+            loading: false })); // done with request
+    }
+
+    handleEnd = () => {
+        this.setState(state => ({page: state.page + 1}), () => this.fetchData());
+    }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>My School Tab</Text>
+                <FlatList
+                    data={this.state.data}
+                    keyExtractor={(x, i) => i.toString()}
+                    onEndReached={() => this.handleEnd()}
+                    onEndReachedThreshold={0.1} //only refreshes once the bottom is reached (0)
+                    renderItem={({item}) =>
+                        <ListItem
+                            roundAvatar
+                            avatar={{uri: item.picture.thumbnail}}
+                            title={`${item.name.first} ${item.name.last}`}
+                        />
+                    }
+
+
+
+                />
             </View>
         );
     }
@@ -30,10 +68,10 @@ class MySchool extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+    //    flex: 1,
+     //   justifyContent: 'center',
+      //  alignItems: 'center',
+       // backgroundColor: '#F5FCFF',
     },
     welcome: {
         fontSize: 40,
@@ -57,4 +95,3 @@ const styles = StyleSheet.create({
 });
 
 
-export default MySchool
