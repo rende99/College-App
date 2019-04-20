@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Picker, Button, Alert } from 'react-native';
+import { Platform, StyleSheet, Text, View, Picker, Button, Alert, FlatList } from 'react-native';
 import { createStackNavigator, createAppContainer, NavigationActions } from 'react-navigation';
-import { SearchBar } from 'react-native-elements'
-
+import { SearchBar } from 'react-native-elements';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -11,13 +10,22 @@ const instructions = Platform.select({
         'Shake or press menu button for dev menu',
 });
 
+
 class FirstLogin extends React.Component {
     state = {
         search: '',
     };
 
+    //search holds the variable for what is currently typed into the bar.
     updateSearch = search => {
         this.setState({ search });
+        isSearching = true;
+        if(search !== ''){
+            //if the current search isn't empty, we want to start showing search results here:
+            <List>
+                
+            </List>
+        }
     };
 
     render() {
@@ -37,7 +45,12 @@ class FirstLogin extends React.Component {
                     placeholder={"Search for your College/Uni..."}
                     onChangeText={this.updateSearch}
                     value={search}
+                    onPress={() => {
+                        isSearching = true;
+                        <Text style={fontSize}>ASS TIME AAAA</Text>
+                    }}
                 />
+
                 <Button
                     onPress={() => {
                         navigate('mainTabs');
@@ -51,7 +64,17 @@ class FirstLogin extends React.Component {
     }
 }
 
+class uniList extends React.Component {
+    render(){
+        return(
+            <View>
+            <FlatList
 
+            />
+            </View>
+        );
+    }
+}
 
 
 
