@@ -1,30 +1,64 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Picker, Button, Alert, FlatList } from 'react-native';
 import { createStackNavigator, createAppContainer, NavigationActions } from 'react-navigation';
-import { SearchBar } from 'react-native-elements';
+import { SearchBar, List } from 'react-native-elements';
+import SearchableDropdown from 'react-native-searchable-dropdown';
 
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-    android:
-        'Double tap R on your keyboard to reload,\n' +
-        'Shake or press menu button for dev menu',
-});
+var unis = [
+    {
+        id: 1,
+        name: 'University of North Carolina at Chapel Hill'
+    },
+    {
+        id: 2,
+        name: 'Duke University'
+    },
+    {
+        id: 3,
+        name: "Wake Forest University"
+    },
+    {
+        id: 4,
+        name: 'University of Michigan - Ann Arbor'
+    },
+    {
+        id: 5,
+        name: 'North Carolina State University'
+    },
+    {
+        id: 6,
+        name: "Michigan State University"
+    },
+    {
+        id: 7,
+        name: 'Harvard University'
+    },
+    {
+        id: 8,
+        name: 'Princeton University'
+    },
+    {
+        id: 9,
+        name: "Louisiana State University"
+    },
+];
 
 
-class FirstLogin extends React.Component {
+
+export default class FirstLogin extends React.Component {
+    
     state = {
         search: '',
     };
 
     //search holds the variable for what is currently typed into the bar.
-    updateSearch = search => {
+    updateSearch = (search) => {
         this.setState({ search });
         isSearching = true;
-        if(search !== ''){
+        if (search !== '') {
             //if the current search isn't empty, we want to start showing search results here:
-            <List>
-                
-            </List>
+            //var uniList = [require('unis.txt')];
+
         }
     };
 
@@ -35,28 +69,40 @@ class FirstLogin extends React.Component {
         return (
 
             <View style={styles.container}>
-
-                <Text style={styles.welcome}>Homescreen</Text>
-                <Text style={styles.instructions}>{instructions}</Text>
-
-                <SearchBar
-                    containerStyle={{ borderRadius: 5, borderWidth: 0, width: 300, margin: 20, padding: 0 }}
-                    searchStyle={{ color: 'black' }}
-                    placeholder={"Search for your College/Uni..."}
-                    onChangeText={this.updateSearch}
-                    value={search}
-                    onPress={() => {
-                        isSearching = true;
-                        <Text style={fontSize}>ASS TIME AAAA</Text>
-                    }}
+                <Text style={styles.welcome}>College App</Text>
+                <SearchableDropdown
+                        onItemSelect={item => alert(JSON.stringify(item))}
+                        containerStyle={{ padding: 5, borderRadius: 10, backgroundColor: '#457B9D'}}
+                        textInputStyle={{
+                        padding: 6,
+                        borderWidth: 0,
+                        //borderColor: '#ccc',
+                        backgroundColor: '#F1FAEE',
+                        borderRadius: 5,
+                        }}
+                        itemStyle={{
+                        padding: 12,
+                        marginTop: 2,
+                        backgroundColor: '#F1FAEE',
+                        borderColor: '#bbb',
+                        borderWidth: 0,
+                        borderRadius: 5,
+                        }}
+                        itemTextStyle={{ color: '#222' }}
+                        itemsContainerStyle={{ maxHeight: 300 , borderRadius: 0}}
+                        items={unis}
+                        //defaultIndex={2}
+                        placeholder="Select your College/University..."
+                        resetValue={false}
+                        underlineColorAndroid="transparent"
                 />
-
                 <Button
                     onPress={() => {
                         navigate('mainTabs');
                     }}
                     title={"Continue"}
                     color='#4B9CD3'
+                    
                 />
                 <Text style={styles.instructions}>If your college isn't listed...</Text>
             </View>
@@ -64,19 +110,25 @@ class FirstLogin extends React.Component {
     }
 }
 
-class uniList extends React.Component {
-    render(){
-        return(
-            <View>
-            <FlatList
 
-            />
+class ListItem extends React.Component {
+    render() {
+        return (
+            <View>
+                <Text>{this.props.title}</Text>
             </View>
         );
     }
 }
 
+class ListView extends React.Component {
 
+
+
+    render() {
+
+    }
+}
 
 
 
@@ -85,7 +137,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#1D3557',
     },
     welcome: {
         fontSize: 40,
@@ -113,9 +165,4 @@ const styles = StyleSheet.create({
         right: 0,
     }
 });
-navigationOptions: {
-    headerLeft: null
-}
 
-
-export default FirstLogin
