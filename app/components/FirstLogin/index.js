@@ -6,45 +6,137 @@ import SearchableDropdown from 'react-native-searchable-dropdown';
 import backgroundVideo from './lights.mp4'
 import Video from 'react-native-video'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
-var unis = [
+import unis from './unis.json'
+var UniversityList = [
     {
-        id: 1,
-        name: 'University of North Carolina at Chapel Hill'
+      "id": "0",
+      "name": "Massachusetts Institute of Technology (MIT)"
     },
     {
-        id: 2,
-        name: 'Duke University'
+      "id": "1",
+      "name": "Harvard University"
     },
     {
-        id: 3,
-        name: "Wake Forest University"
+      "id": "2",
+      "name": "Stanford University"
     },
     {
-        id: 4,
-        name: 'University of Michigan - Ann Arbor'
+      "id": "3",
+      "name": "University of California, Berkeley (UCB)"
     },
     {
-        id: 5,
-        name: 'North Carolina State University'
+      "id": "4",
+      "name": "University of Michigan, Ann Arbor"
     },
     {
-        id: 6,
-        name: "Michigan State University"
+      "id": "5",
+      "name": "University of Washington"
     },
     {
-        id: 7,
-        name: 'Harvard University'
+      "id": "6",
+      "name": "Cornell University"
     },
     {
-        id: 8,
-        name: 'Princeton University'
+      "id": "7",
+      "name": "Purdue University"
     },
     {
-        id: 9,
-        name: "Louisiana State University"
+      "id": "8",
+      "name": "University of Wisconsin-Madison"
     },
-];
+    {
+      "id": "9",
+      "name": "Columbia University"
+    },
+    {
+      "id": "10",
+      "name": "University of California, Los Angeles (UCLA)"
+    },
+    {
+      "id": "11",
+      "name": "The University of Texas, Austin"
+    },
+    {
+      "id": "12",
+      "name": "Penn State University"
+    },
+    {
+      "id": "13",
+      "name": "University of Illinois, Urbana-Champaign"
+    },
+    {
+      "id": "14",
+      "name": "University of Minnesota"
+    },
+    {
+      "id": "15",
+      "name": "New York University (NYU)"
+    },
+    {
+      "id": "16",
+      "name": "University of Pennsylvania (UPENN)"
+    },
+    {
+      "id": "17",
+      "name": "University of Southern California (USC)"
+    },
+    {
+      "id": "18",
+      "name": "Carnegie Mellon University"
+    },
+    {
+      "id": "19",
+      "name": "Princeton University"
+    },
+    {
+      "id": "20",
+      "name": "University of California, Irvine (UCI)"
+    },
+    {
+      "id": "21",
+      "name": "University of California, San Diego (UCSD)"
+    },
+    {
+      "id": "22",
+      "name": "Yale University"
+    },
+    {
+      "id": "23",
+      "name": "Arizona State University (ASU)"
+    },
+    {
+      "id": "24",
+      "name": "University of Chicago"
+    },
+    {
+      "id": "25",
+      "name": "University of Colorado, Boulder"
+    },
+    {
+      "id": "26",
+      "name": "University of North Carolina, Chapel Hill"
+    },
+    {
+      "id": "27",
+      "name": "Michigan State University"
+    },
+    {
+      "id": "28",
+      "name": "University of California, Davis (UCD)"
+    },
+    {
+      "id": "29",
+      "name": "University of Florida"
+    },
+    {
+      "id": "30",
+      "name": "University of Maryland"
+    },
+    {
+      "id": "31",
+      "name": "Duke University"
+    }
+  ];
 
 
 
@@ -94,7 +186,7 @@ export default class FirstLogin extends React.Component {
                             fontSize: 18,
                         }}
                         itemsContainerStyle={{ maxHeight: 300, borderRadius: 0 }}
-                        items={unis}
+                        items={UniversityList}
                         //defaultIndex={2}
                         placeholder="Select your College or University..."
                         resetValue={false}
