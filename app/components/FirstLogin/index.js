@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Picker, Button, Alert, FlatList } from 'react-native';
+import { Platform, StyleSheet, Text, View, Picker, Button, Alert, FlatList, StatusBar } from 'react-native';
 import { createStackNavigator, createAppContainer, NavigationActions } from 'react-navigation';
 import { SearchBar, List } from 'react-native-elements';
 import SearchableDropdown from 'react-native-searchable-dropdown';
+import backgroundVideo from './lights.mp4'
+import Video from 'react-native-video'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 var unis = [
     {
@@ -46,90 +49,71 @@ var unis = [
 
 
 export default class FirstLogin extends React.Component {
-    
-    state = {
-        search: '',
-    };
+    constructor() {
+        super()
+    }
 
-    //search holds the variable for what is currently typed into the bar.
-    updateSearch = (search) => {
-        this.setState({ search });
-        isSearching = true;
-        if (search !== '') {
-            //if the current search isn't empty, we want to start showing search results here:
-            //var uniList = [require('unis.txt')];
 
-        }
-    };
+    _onPress = () => {
+        Alert.alert('ssss');
+        navigate('mainTabs');
+    }
+
+
 
     render() {
         const { navigate } = this.props.navigation
-        const { search } = this.state;
-
         return (
+            <View style={styles.backgroundVideo}>
+                <StatusBar backgroundColor="#1d3557" />
 
-            <View style={styles.container}>
-                <Text style={styles.welcome}>College App</Text>
-                <SearchableDropdown
+                <View style={styles.container}>
+                    <Text style={styles.welcome}>College App</Text>
+                    <SearchableDropdown
                         onItemSelect={item => alert(JSON.stringify(item))}
-                        containerStyle={{ padding: 5, borderRadius: 10, backgroundColor: '#457B9D'}}
+                        containerStyle={{ padding: 5, borderRadius: 10, backgroundColor: '#457B9D' }}
                         textInputStyle={{
-                        padding: 6,
-                        borderWidth: 0,
-                        //borderColor: '#ccc',
-                        backgroundColor: '#F1FAEE',
-                        borderRadius: 5,
+                            // style of bar when NOT searching through it
+                            padding: 8,
+                            borderWidth: 0,
+                            //borderColor: '#ccc',
+                            backgroundColor: '#F1FAEE',
+                            borderRadius: 5,
+
                         }}
                         itemStyle={{
-                        padding: 12,
-                        marginTop: 2,
-                        backgroundColor: '#F1FAEE',
-                        borderColor: '#bbb',
-                        borderWidth: 0,
-                        borderRadius: 5,
+                            // style of bar WHILE searching through it
+                            padding: 12,
+                            marginTop: 2,
+                            backgroundColor: '#F1FAEE',
+                            borderWidth: 0,
+                            borderRadius: 5,
                         }}
-                        itemTextStyle={{ color: '#222' }}
-                        itemsContainerStyle={{ maxHeight: 300 , borderRadius: 0}}
+                        itemTextStyle={{
+                            color: '#222',
+                            fontSize: 18,
+                        }}
+                        itemsContainerStyle={{ maxHeight: 300, borderRadius: 0 }}
                         items={unis}
                         //defaultIndex={2}
-                        placeholder="Select your College/University..."
+                        placeholder="Select your College or University..."
                         resetValue={false}
                         underlineColorAndroid="transparent"
-                />
-                <Button
-                    onPress={() => {
-                        navigate('mainTabs');
-                    }}
-                    title={"Continue"}
-                    color='#4B9CD3'
-                    
-                />
-                <Text style={styles.instructions}>If your college isn't listed...</Text>
+                    />
+                    <View style={styles.buttonContainer}>
+                    <Button
+                        onPress={() => {navigate('mySchool')}}
+                        style={styles.button}
+                        title='Continue'
+                        color='#E63946'
+                    />
+                    </View>
+                    <Text style={styles.instructions}>If your college isn't listed, sowwy!</Text>
+                </View>
             </View>
         );
     }
 }
-
-
-class ListItem extends React.Component {
-    render() {
-        return (
-            <View>
-                <Text>{this.props.title}</Text>
-            </View>
-        );
-    }
-}
-
-class ListView extends React.Component {
-
-
-
-    render() {
-
-    }
-}
-
 
 
 const styles = StyleSheet.create({
@@ -142,17 +126,28 @@ const styles = StyleSheet.create({
     welcome: {
         fontSize: 40,
         textAlign: 'center',
-        margin: 10,
+        marginBottom: 90,
+        color: '#F1FAEE',
     },
     instructions: {
         textAlign: 'center',
-        color: '#333333',
+        color: '#F1FAEE',
         marginBottom: 5,
+        fontSize: 16,
     },
-    picker: {
-        height: 50,
-        width: 300,
-        color: '#000000',
+    button: {
+        height: 45,
+        width: 100,
+        marginTop: 20,
+        marginBottom: 5,
+        borderRadius: 0,
+        backgroundColor: '#E63946', // for TouchableOpacity
+        color: '#E63946', // in case we are using a Button component instead of a TouchableOpacity one.
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonContainer: {
+        margin: 20
     },
     searchText: {
         fontSize: 50,

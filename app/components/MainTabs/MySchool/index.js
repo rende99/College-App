@@ -26,7 +26,7 @@ export default class MySchool extends React.Component {
 
     fetchData = async () => {
         this.setState({loading: true}); // preparing for request
-        const response = await fetch(`https://randomuser.me/api?results=10&seed=hih&page=0${this.state.page}`);
+        const response = await fetch(`https://randomuser.me/api?results=10&seed=hih&page=${this.state.page}`);
         const json = await response.json();
         this.setState(state => ({
             data: [...state.data, ...json.results],
@@ -40,16 +40,20 @@ export default class MySchool extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text style={styles.instructions}>Your School Name Here</Text>
                 <FlatList
                     data={this.state.data}
                     keyExtractor={(x, i) => i.toString()}
                     onEndReached={() => this.handleEnd()}
-                    onEndReachedThreshold={0.1} //only refreshes once the bottom is reached (0)
+                    onEndReachedThreshold={0.1} //only refreshes once the bottom is nearly reached (0.1)
                     renderItem={({item}) =>
                         <ListItem
                             roundAvatar
                             avatar={{uri: item.picture.thumbnail}}
                             title={`${item.name.first} ${item.name.last}`}
+                            onPress={()=>{
+                                Alert.alert(`You pressed ${item.name.first} ${item.name.last}`)
+                            }}
                         />
                     }
 
@@ -82,6 +86,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         marginBottom: 5,
+        padding: 8
     },
     picker: {
         height: 50,

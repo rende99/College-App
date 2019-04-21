@@ -22,8 +22,6 @@ const MainNavigator = createSwitchNavigator({
   }
 );
 
-
-
 const App = createAppContainer(MainNavigator);
 export default App;
 

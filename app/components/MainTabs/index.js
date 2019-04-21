@@ -6,30 +6,6 @@ import Contribute from './Contribute';
 import National from './National';
 
 
-
-class MainTabs extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-    render() {
-        return (
-            <View>
-                <Text>CONTRIBUTE</Text>
-                <Button
-                    onPress={() => {
-
-                    }}
-                    title={"Continue"}
-                    color='#4B9CD3'
-
-                />
-            </View>
-        );
-    }
-}
-
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -72,12 +48,12 @@ const TabNavigator = createBottomTabNavigator(
             },
         }),
         tabBarOptions: {
-            activeTintColor: 'orange',
-            inactiveTintColor: '#586589',
+            activeTintColor: '#e63946',
+            inactiveTintColor: '#457b9d',
             showIcon: true,
             showLabel: false,
             style: {
-                backgroundColor: '#171F33',
+                backgroundColor: '#1d3557',
             }
         },
 
