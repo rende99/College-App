@@ -135,7 +135,7 @@ var UniversityList = [
     {
       "id": "31",
       "name": "Duke University"
-    }
+    },
   ];
 
 
@@ -162,7 +162,10 @@ export default class FirstLogin extends React.Component {
                 <View style={styles.container}>
                     <Text style={styles.welcome}>College App</Text>
                     <SearchableDropdown
-                        onItemSelect={item => alert(JSON.stringify(item))}
+                        onItemSelect={item => {
+                          global.SCHOOL = JSON.stringify(item.name);
+                          // alert(global.SCHOOL); (For confirmation)
+                          }}
                         containerStyle={{ padding: 5, borderRadius: 10, backgroundColor: '#457B9D' }}
                         textInputStyle={{
                             // style of bar when NOT searching through it

@@ -40,7 +40,7 @@ export default class MySchool extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.instructions}>Your School Name Here</Text>
+                <Text style={styles.instructions}>{global.SCHOOL}</Text>
                 <FlatList
                     data={this.state.data}
                     keyExtractor={(x, i) => i.toString()}
@@ -50,7 +50,7 @@ export default class MySchool extends React.Component {
                         <ListItem
                             roundAvatar
                             avatar={{uri: item.picture.thumbnail}}
-                            title={`${item.name.first} ${item.name.last}`}
+                            title={`${item.name.first}???????${item.name.last}`}
                             onPress={()=>{
                                 Alert.alert(`You pressed ${item.name.first} ${item.name.last}`)
                             }}
