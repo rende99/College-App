@@ -1,9 +1,2 @@
 # College-App
-tbd
-Scheme:
-#e63946 = red
-#f1faee = almost white
-#a8dadc = light blue
-#457b9d = med blue
-#1d3557 = dark blue
-
+A Social media application for college students, by college students. Contribute to a live feed of what's going around at YOUR campus, and see what's going on elsewhere, too!
